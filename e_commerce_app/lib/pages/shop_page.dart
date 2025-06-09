@@ -21,8 +21,29 @@ class _ShopPageState extends State<ShopPage> {
       context: context,
       builder:
           (context) => AlertDialog(
-            title: Text("Succesfully added!"),
-            content: Text("Check your cart"),
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            title: Row(
+              children: const [
+                Icon(Icons.check_circle, color: Colors.green, size: 28),
+                SizedBox(width: 8),
+                Text(
+                  "Success!",
+                  style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
+                ),
+              ],
+            ),
+            content: const Text(
+              "Shoe added to your cart.",
+              style: TextStyle(color: Colors.black87, fontSize: 16),
+            ),
+            actionsAlignment: MainAxisAlignment.center,
           ),
     );
   }
